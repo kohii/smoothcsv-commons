@@ -268,4 +268,32 @@ public class StringUtils {
     buf.append(s.substring(pos, s.length()).toUpperCase());
     return buf.toString();
   }
+
+  /**
+   * Returns the number of lines in the text.
+   *
+   * @param s text
+   * @return the number of lines
+   */
+  public static int calcLineCount(String s) {
+    if (StringUtils.isEmpty(s)) {
+      return 1;
+    }
+    char[] chars = s.toCharArray();
+    int ret = 1;
+    boolean isPrevCr = false;
+    for (int i = 0, ln = chars.length; i < ln; i++) {
+      char c = chars[i];
+      if (c == '\r') {
+        isPrevCr = true;
+        ret++;
+      } else {
+        if (c == '\n' && !isPrevCr) {
+          ret++;
+        }
+        isPrevCr = false;
+      }
+    }
+    return ret;
+  }
 }
