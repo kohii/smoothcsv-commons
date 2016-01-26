@@ -296,4 +296,28 @@ public class StringUtils {
     }
     return ret;
   }
+
+  /**
+   * Returns text length. <br>
+   * Treat half width char as 1 and full width char as 2.
+   *
+   * @param text text
+   * @return length
+   */
+  public static int textWidth(String text) {
+    int ret = 0;
+    for (int i = 0, ln = text.length(); i < ln; i++) {
+      char c = text.charAt(i);
+      if ((c <= '\u007e') || // half alpha numeric
+          (c == '\u00a5') || // \
+          (c == '\u203e') || // ~
+          (c >= '\uff61' && c <= '\uff9f') // half width kana
+      ) {
+        ret += 1;
+      } else {
+        ret += 2;
+      }
+    }
+    return ret;
+  }
 }
