@@ -13,6 +13,8 @@
  */
 package com.smoothcsv.commons.utils;
 
+import com.smoothcsv.csv.NewlineCharacter;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,8 +27,6 @@ import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.smoothcsv.csv.NewlineCharacter;
 
 public class FileUtils {
 
@@ -51,7 +51,7 @@ public class FileUtils {
 
   public static void write(List<String> content, File file, String charset) throws IOException {
     try (Writer writer =
-        new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset))) {
+             new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset))) {
       String lf = NewlineCharacter.DEFAULT.stringValue();
       for (int i = 0; i < content.size(); i++) {
         writer.write(content.get(i));
@@ -63,7 +63,7 @@ public class FileUtils {
 
   public static void write(String content, File file, String charset) throws IOException {
     try (Writer writer =
-        new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset))) {
+             new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset))) {
       writer.write(content);
       writer.flush();
     }

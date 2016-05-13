@@ -16,7 +16,6 @@ package com.smoothcsv.commons.constants;
 import com.smoothcsv.commons.utils.EnumStringSupport;
 
 /**
- *
  * @author kohii
  */
 public enum Direction {

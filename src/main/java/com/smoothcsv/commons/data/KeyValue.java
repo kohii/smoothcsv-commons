@@ -19,9 +19,9 @@ import java.util.Map.Entry;
 /**
  * JavaBeans that contains <code>key</code> and <code>value</code>.
  *
- * @author kohii
  * @param <K> key
  * @param <V> value
+ * @author kohii
  */
 public class KeyValue<K, V> implements Serializable, Entry<K, V> {
 

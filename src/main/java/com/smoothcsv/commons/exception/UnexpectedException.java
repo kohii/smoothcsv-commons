@@ -14,7 +14,6 @@
 package com.smoothcsv.commons.exception;
 
 /**
- *
  * @author kohii
  */
 public class UnexpectedException extends RuntimeException {

@@ -18,12 +18,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author kohii
  */
 public class NamePatternUtils {
 
-  private static final char[] REGEX_ESCAPE_CHARS = new char[] {'\\', '*', '+', '.', '?', '{', '}',
+  private static final char[] REGEX_ESCAPE_CHARS = new char[]{'\\', '*', '+', '.', '?', '{', '}',
       '(', ')', '[', ']', '^', '$', '-', '|'};
 
   public static Pattern getPattern(String patternString) {

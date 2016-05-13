@@ -13,15 +13,14 @@
  */
 package com.smoothcsv.commons.utils;
 
+import com.smoothcsv.csv.reader.DefaultCsvReader;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.List;
 
-import com.smoothcsv.csv.reader.DefaultCsvReader;
-
 /**
- *
  * @author kohii
  */
 public class CsvUtils {

@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author kohii
  */
 public class StringUtils {
@@ -312,7 +311,7 @@ public class StringUtils {
           (c == '\u00a5') || // \
           (c == '\u203e') || // ~
           (c >= '\uff61' && c <= '\uff9f') // half width kana
-      ) {
+          ) {
         ret += 1;
       } else {
         ret += 2;

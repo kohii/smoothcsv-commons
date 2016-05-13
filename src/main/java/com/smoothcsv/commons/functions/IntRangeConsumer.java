@@ -14,7 +14,6 @@
 package com.smoothcsv.commons.functions;
 
 /**
- *
  * @author kohii
  */
 @FunctionalInterface
@@ -24,7 +23,7 @@ public interface IntRangeConsumer {
    * Performs this operation on the given arguments.
    *
    * @param from the first input argument
-   * @param to the second input argument
+   * @param to   the second input argument
    */
   void accept(int from, int to);
 }

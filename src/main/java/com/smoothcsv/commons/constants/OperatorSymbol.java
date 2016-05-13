@@ -14,7 +14,6 @@
 package com.smoothcsv.commons.constants;
 
 /**
- *
  * @author kohii
  */
 public enum OperatorSymbol {

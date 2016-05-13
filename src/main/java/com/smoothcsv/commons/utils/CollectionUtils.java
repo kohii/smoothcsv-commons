@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- *
  * @author kohii
  */
 public class CollectionUtils {

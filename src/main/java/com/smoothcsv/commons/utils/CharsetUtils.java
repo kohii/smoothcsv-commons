@@ -13,22 +13,21 @@
  */
 package com.smoothcsv.commons.utils;
 
+import org.mozilla.universalchardet.UniversalDetector;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-import org.mozilla.universalchardet.UniversalDetector;
-
 /**
- *
  * @author kohii
  */
 public class CharsetUtils {
 
   public static final Charset UTF8 = Charset.forName("UTF-8");
 
-  private static final byte[] UTF8_BYTE_ORDER_MARK_BYTES = new byte[] {(byte) 0xEF, (byte) 0xBB,
+  private static final byte[] UTF8_BYTE_ORDER_MARK_BYTES = new byte[]{(byte) 0xEF, (byte) 0xBB,
       (byte) 0xBF};
   private static final char UTF8_BYTE_ORDER_MARK_CHAR = 0xFEFF;
 

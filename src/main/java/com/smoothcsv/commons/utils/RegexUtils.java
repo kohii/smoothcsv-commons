@@ -14,12 +14,11 @@
 package com.smoothcsv.commons.utils;
 
 /**
- *
  * @author kohii
  */
 public class RegexUtils {
 
-  private static final char[] REGEX_ESCAPE_CHARS = new char[] {'\\', '*', '+', '.', '?', '{', '}',
+  private static final char[] REGEX_ESCAPE_CHARS = new char[]{'\\', '*', '+', '.', '?', '{', '}',
       '(', ')', '[', ']', '^', '$', '-', '|'};
 
   public static String escapeRegex(String text) {

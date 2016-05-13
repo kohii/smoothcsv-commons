@@ -17,7 +17,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
- *
  * @author kohii
  */
 public class ThrowableUtils {
@@ -30,7 +29,7 @@ public class ThrowableUtils {
   }
 
   public static final Throwable getInitialCause(Throwable t) {
-    for (;;) {
+    for (; ; ) {
       if (t.getCause() == null) {
         return t;
       }

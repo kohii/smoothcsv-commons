@@ -14,7 +14,6 @@
 package com.smoothcsv.commons.utils;
 
 /**
- *
  * @author kohii
  */
 public class HtmlUtils {

@@ -22,49 +22,49 @@ import java.io.PushbackInputStream;
  * of any Unicode BOM (Byte Order Mark) at its beginning, as defined by <a
  * href="http://www.faqs.org/rfcs/rfc3629.html">RFC 3629 - UTF-8, a transformation format of ISO
  * 10646</a>
- *
+ * <p>
  * <p>
  * The <a href="http://www.unicode.org/unicode/faq/utf_bom.html">Unicode FAQ</a> defines 5 types of
  * BOMs:
  * <ul>
  * <li>
- * 
+ * <p>
  * <pre>
  * 00 00 FE FF  = UTF-32, big-endian
  * </pre>
- * 
+ * <p>
  * </li>
  * <li>
- * 
+ * <p>
  * <pre>
  * FF FE 00 00  = UTF-32, little-endian
  * </pre>
- * 
+ * <p>
  * </li>
  * <li>
- * 
+ * <p>
  * <pre>
  * FE FF        = UTF-16, big-endian
  * </pre>
- * 
+ * <p>
  * </li>
  * <li>
- * 
+ * <p>
  * <pre>
  * FF FE        = UTF-16, little-endian
  * </pre>
- * 
+ * <p>
  * </li>
  * <li>
- * 
+ * <p>
  * <pre>
  * EF BB BF     = UTF-8
  * </pre>
- * 
+ * <p>
  * </li>
  * </ul>
  * </p>
- *
+ * <p>
  * <p>
  * Use the {@link #getBOM()} method to know whether a BOM has been detected or not.
  * </p>
@@ -83,36 +83,36 @@ public class BOMInputStream extends InputStream {
     /**
      * NONE.
      */
-    public static final BOM NONE = new BOM(new byte[] {}, "NONE");
+    public static final BOM NONE = new BOM(new byte[]{}, "NONE");
 
     /**
      * UTF-8 BOM (EF BB BF).
      */
-    public static final BOM UTF_8 = new BOM(new byte[] {(byte) 0xEF, (byte) 0xBB, (byte) 0xBF},
+    public static final BOM UTF_8 = new BOM(new byte[]{(byte) 0xEF, (byte) 0xBB, (byte) 0xBF},
         "UTF-8");
 
     /**
      * UTF-16, little-endian (FF FE).
      */
-    public static final BOM UTF_16_LE = new BOM(new byte[] {(byte) 0xFF, (byte) 0xFE},
+    public static final BOM UTF_16_LE = new BOM(new byte[]{(byte) 0xFF, (byte) 0xFE},
         "UTF-16 little-endian");
 
     /**
      * UTF-16, big-endian (FE FF).
      */
-    public static final BOM UTF_16_BE = new BOM(new byte[] {(byte) 0xFE, (byte) 0xFF},
+    public static final BOM UTF_16_BE = new BOM(new byte[]{(byte) 0xFE, (byte) 0xFF},
         "UTF-16 big-endian");
 
     /**
      * UTF-32, little-endian (FF FE 00 00).
      */
-    public static final BOM UTF_32_LE = new BOM(new byte[] {(byte) 0xFF, (byte) 0xFE, (byte) 0x00,
+    public static final BOM UTF_32_LE = new BOM(new byte[]{(byte) 0xFF, (byte) 0xFE, (byte) 0x00,
         (byte) 0x00}, "UTF-32 little-endian");
 
     /**
      * UTF-32, big-endian (00 00 FE FF).
      */
-    public static final BOM UTF_32_BE = new BOM(new byte[] {(byte) 0x00, (byte) 0x00, (byte) 0xFE,
+    public static final BOM UTF_32_BE = new BOM(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0xFE,
         (byte) 0xFF}, "UTF-32 big-endian");
 
     /**
@@ -153,10 +153,9 @@ public class BOMInputStream extends InputStream {
    * Constructs a new <code>BOMInputStream</code> that wraps the specified <code>InputStream</code>.
    *
    * @param inputStream an <code>InputStream</code>.
-   *
    * @throws NullPointerException when <code>inputStream</code> is <code>null</code>.
-   * @throws IOException on reading from the specified <code>InputStream</code> when trying to
-   *         detect the Unicode BOM.
+   * @throws IOException          on reading from the specified <code>InputStream</code> when trying to
+   *                              detect the Unicode BOM.
    */
   public BOMInputStream(final InputStream inputStream) throws NullPointerException, IOException {
     if (inputStream == null) {
@@ -219,9 +218,8 @@ public class BOMInputStream extends InputStream {
    * Skips the <code>BOM</code> that was found in the wrapped <code>InputStream</code> object.
    *
    * @return this <code>BOMInputStream</code>.
-   *
    * @throws IOException when trying to skip the BOM from the wrapped <code>InputStream</code>
-   *         object.
+   *                     object.
    */
   public final synchronized BOMInputStream skipBOM() throws IOException {
     if (!skipped) {
