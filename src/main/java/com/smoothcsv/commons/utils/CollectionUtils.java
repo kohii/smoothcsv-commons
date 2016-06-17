@@ -13,8 +13,10 @@
  */
 package com.smoothcsv.commons.utils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author kohii
@@ -23,5 +25,15 @@ public class CollectionUtils {
 
   public static <T> void add(Collection<T> c, T t, int size) {
     c.addAll(Arrays.asList(ArrayUtils.createAndFill(size, t)));
+  }
+
+  public static <T> List<T> unique(List<T> list) {
+    List<T> ret = new ArrayList<>();
+    for (T t : list) {
+      if (!ret.contains(t)) {
+        ret.add(t);
+      }
+    }
+    return ret;
   }
 }
