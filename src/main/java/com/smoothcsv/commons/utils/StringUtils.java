@@ -244,27 +244,31 @@ public class StringUtils {
   }
 
   public static String decamelize(final String s) {
+    return decamelize(s, '_');
+  }
+
+  public static String decamelize(final String s, char separator) {
     if (s == null) {
       return null;
     }
     if (s.length() == 1) {
-      return s.toUpperCase();
+      return s.toLowerCase();
     }
     StringBuilder buf = new StringBuilder(40);
     int pos = 0;
     for (int i = 1; i < s.length(); ++i) {
       if (Character.isUpperCase(s.charAt(i))) {
         if (buf.length() != 0) {
-          buf.append('_');
+          buf.append(separator);
         }
-        buf.append(s.substring(pos, i).toUpperCase());
+        buf.append(s.substring(pos, i).toLowerCase());
         pos = i;
       }
     }
     if (buf.length() != 0) {
-      buf.append('_');
+      buf.append(separator);
     }
-    buf.append(s.substring(pos, s.length()).toUpperCase());
+    buf.append(s.substring(pos, s.length()).toLowerCase());
     return buf.toString();
   }
 
