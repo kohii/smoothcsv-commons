@@ -13,6 +13,7 @@
  */
 package com.smoothcsv.commons.utils;
 
+import com.smoothcsv.commons.exception.UnexpectedException;
 import com.smoothcsv.csv.NewlineCharacter;
 
 import java.io.BufferedReader;
@@ -41,7 +42,9 @@ public class FileUtils {
 
   public static void ensureDirectoryExists(File dir) {
     if (!dir.exists() || !dir.isDirectory()) {
-      dir.mkdirs();
+      if (!dir.mkdirs()) {
+        throw new UnexpectedException("Could not make a directory. name=" + getCanonicalPath(dir));
+      }
     }
   }
 
@@ -102,5 +105,27 @@ public class FileUtils {
     } catch (IOException e) {
       return file.getAbsolutePath();
     }
+  }
+
+  public static File getLatestFileFromDir(File dir) {
+    return getLatestFileFromDir(dir, null);
+  }
+
+  public static File getLatestFileFromDir(File dir, File except) {
+    File[] files = dir.listFiles();
+    if (files == null || files.length == 0) {
+      return null;
+    }
+
+    File lastModifiedFile = null;
+    for (int i = 0; i < files.length; i++) {
+      if (files[i].equals(except)) {
+        continue;
+      }
+      if (lastModifiedFile == null || lastModifiedFile.lastModified() < files[i].lastModified()) {
+        lastModifiedFile = files[i];
+      }
+    }
+    return lastModifiedFile;
   }
 }
