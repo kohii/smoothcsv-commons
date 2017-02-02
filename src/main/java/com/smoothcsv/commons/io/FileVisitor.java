@@ -13,11 +13,11 @@
  */
 package com.smoothcsv.commons.io;
 
-import com.smoothcsv.commons.functions.FileHandler;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import com.smoothcsv.commons.functions.FileHandler;
 
 /**
  * @author kohii

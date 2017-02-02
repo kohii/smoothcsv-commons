@@ -13,9 +13,6 @@
  */
 package com.smoothcsv.commons.utils;
 
-import com.smoothcsv.commons.exception.UnexpectedException;
-import com.smoothcsv.csv.NewlineCharacter;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -28,6 +25,9 @@ import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.smoothcsv.commons.exception.UnexpectedException;
+import com.smoothcsv.csv.NewlineCharacter;
 
 public class FileUtils {
 

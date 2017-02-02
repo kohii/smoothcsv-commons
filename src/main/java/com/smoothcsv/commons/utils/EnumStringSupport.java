@@ -13,14 +13,14 @@
  */
 package com.smoothcsv.commons.utils;
 
-import com.smoothcsv.commons.exception.IORuntimeException;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
+
+import com.smoothcsv.commons.exception.IORuntimeException;
 
 /**
  * @author kohii

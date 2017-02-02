@@ -13,12 +13,12 @@
  */
 package com.smoothcsv.commons.utils;
 
-import org.mozilla.universalchardet.UniversalDetector;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
+
+import org.mozilla.universalchardet.UniversalDetector;
 
 /**
  * @author kohii

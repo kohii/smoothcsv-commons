@@ -13,13 +13,13 @@
  */
 package com.smoothcsv.commons.utils;
 
-import com.smoothcsv.commons.functions.IntRangeConsumer;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+
+import com.smoothcsv.commons.functions.IntRangeConsumer;
 
 public class ArrayUtils {
 
