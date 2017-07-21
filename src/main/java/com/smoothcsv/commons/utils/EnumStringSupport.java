@@ -27,10 +27,10 @@ import com.smoothcsv.commons.exception.IORuntimeException;
  */
 public class EnumStringSupport {
 
-  private final static Map<Class, Properties> PROPERTIES_MAP = new ConcurrentHashMap();
+  private final static Map<Class<?>, Properties> PROPERTIES_MAP = new ConcurrentHashMap<>();
 
-  public static String getString(Enum enm) {
-    Class cls = enm.getClass();
+  public static String getString(Enum<?> enm) {
+    Class<?> cls = enm.getClass();
     Properties properties = PROPERTIES_MAP.get(cls);
     if (properties == null) {
       properties = new Properties();
