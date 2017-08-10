@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.smoothcsv.commons.exception.UnexpectedException;
-import com.smoothcsv.csv.NewlineCharacter;
+import com.smoothcsv.csv.prop.LineSeparator;
 
 public class FileUtils {
 
@@ -55,7 +55,7 @@ public class FileUtils {
   public static void write(List<String> content, File file, String charset) throws IOException {
     try (Writer writer =
              new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset))) {
-      String lf = NewlineCharacter.DEFAULT.stringValue();
+      String lf = LineSeparator.DEFAULT.stringValue();
       for (int i = 0; i < content.size(); i++) {
         writer.write(content.get(i));
         writer.write(lf);
