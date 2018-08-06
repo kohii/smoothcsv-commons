@@ -315,12 +315,26 @@ public class StringUtils {
           (c == '\u00a5') || // \
           (c == '\u203e') || // ~
           (c >= '\uff61' && c <= '\uff9f') // half width kana
-          ) {
+      ) {
         ret += 1;
       } else {
         ret += 2;
       }
     }
     return ret;
+  }
+
+  public static String omitLines(String s, int maxLines) {
+    int lineCount = 1;
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (c == '\n') {
+        lineCount++;
+        if (lineCount > maxLines) {
+          return s.substring(0, i + 1) + "...";
+        }
+      }
+    }
+    return s;
   }
 }
